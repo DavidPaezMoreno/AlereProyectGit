@@ -215,15 +215,15 @@ var apex_img_dir = "/i/",
         
         if(window.localStorage.getItem("usuario") != ""){
             $('#P101_USERNAME').val(window.localStorage.getItem("usuario"));
-            cambio = true;
+            carga = true;
         }
         if(window.localStorage.getItem("contrasena") != ""){
             $('#P101_PASSWORD').val(window.localStorage.getItem("contrasena"));
-            cambio = true;
+            carga = true;
         }
         if(window.localStorage.getItem("urlCode") != ""){
             $('#P101_URLCODE').val(window.localStorage.getItem("urlCode"));
-            cambio = true;
+            carga = true;
         }            
 
         if(carga){
