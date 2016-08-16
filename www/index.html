@@ -64,6 +64,27 @@
                                             <h1 class="t-Login-title" id="opptracker_heading">ALERE Software | CRM</h1>
                                         </div>
                                         <div class="t-Login-body">
+                                            
+                                            <!-- NUEVO CAMPO -->
+                                            <div class="t-Form-fieldContainer t-Form-fieldContainer--hiddenLabel rel-col" id="P101_URLCODE_CONTAINER">
+                                                <div class="t-Form-labelContainer t-Form-labelContainer--hiddenLabel col col-null">
+                                                    <label for="P101_URLCODE" id="P101_URLCODE_LABEL" class="t-Form-label u-VisuallyHidden">URL Code</label>
+                                                </div>
+                                                <div class="t-Form-inputContainer col col-null">
+                                                    <input type="hidden" name="p_arg_names" value="4654499136162425606">
+                                                    <input type="text" id="P101_URLCODE" name="p_t01" required="" aria-required="true" placeholder="URL" class="text_field width-100" value="" size="64" maxlength="100"><span class=""></span></div>
+                                            </div>
+
+                                            <div class="t-Form-fieldContainer t-Form-fieldContainer--hiddenLabel rel-col" id="P101_APP_CONTAINER">
+                                                <div class="t-Form-labelContainer t-Form-labelContainer--hiddenLabel col col-null">
+                                                    <label for="P101_URLCODE" id="P101_APP_LABEL" class="t-Form-label u-VisuallyHidden">URL Code</label>
+                                                </div>
+                                                <div class="t-Form-inputContainer col col-null">
+                                                    <input type="hidden" name="p_arg_names" value="4654499136162425606">
+                                                    <input type="text" id="P101_APP" name="p_t01" required="" aria-required="true" placeholder="APP" class="text_field width-100" value="" size="64" maxlength="100"><span class=""></span></div>
+                                            </div>
+
+                                            <!-- FIN NUEVO CAMPO -->
                                             <div class="t-Form-fieldContainer t-Form-fieldContainer--hiddenLabel rel-col" id="P101_USERNAME_CONTAINER">
                                                 <div class="t-Form-labelContainer t-Form-labelContainer--hiddenLabel col col-null">
                                                     <label for="P101_USERNAME" id="P101_USERNAME_LABEL" class="t-Form-label u-VisuallyHidden">User Name</label>
@@ -72,17 +93,6 @@
                                                     <input type="hidden" name="p_arg_names" value="4654499136162425606">
                                                     <input type="text" id="P101_USERNAME" name="p_t01" required="" aria-required="true" placeholder="username" class="text_field" value="" size="64" maxlength="100"><span class=""></span></div>
                                             </div>
-
-                                            <!-- NUEVO CAMPO -->
-                                            <div class="t-Form-fieldContainer t-Form-fieldContainer--hiddenLabel rel-col" id="P101_URLCODE_CONTAINER">
-                                                <div class="t-Form-labelContainer t-Form-labelContainer--hiddenLabel col col-null">
-                                                    <label for="P101_URLCODE" id="P101_URLCODE_LABEL" class="t-Form-label u-VisuallyHidden">URL Code</label>
-                                                </div>
-                                                <div class="t-Form-inputContainer col col-null">
-                                                    <input type="hidden" name="p_arg_names" value="4654499136162425606">
-                                                    <input type="text" id="P101_URLCODE" name="p_t01" required="" aria-required="true" placeholder="URL Code" class="text_field width-100" value="" size="64" maxlength="100"><span class=""></span></div>
-                                            </div>
-                                            <!-- FIN NUEVO CAMPO -->
 
                                             <div class="t-Form-fieldContainer t-Form-fieldContainer--hiddenLabel rel-col" id="P101_PASSWORD_CONTAINER">
                                                 <div class="t-Form-labelContainer t-Form-labelContainer--hiddenLabel col col-null">
@@ -128,6 +138,7 @@ var apex_img_dir = "/i/",
     <script type="text/javascript" src="./ALERE Software _ CRM_files/desktop.min.js"></script>
     <script type="text/javascript" src="./ALERE Software _ CRM_files/wwv_flow.js_messages"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
 
     <style>
@@ -171,6 +182,14 @@ var apex_img_dir = "/i/",
                 "affectedElements": "P101_PASSWORD",
                 javascriptFunction: apex.da.setFocus,
                 "action": "NATIVE_SET_FOCUS"
+            }, {
+                "eventResult": false,
+                "executeOnPageInit": false,
+                "stopExecutionOnError": true,
+                "affectedElementsType": "ITEM",
+                "affectedElements": "P101_APP",
+                javascriptFunction: apex.da.setFocus,
+                "action": "NATIVE_SET_FOCUS"
             }]
         }];
     }
@@ -195,7 +214,14 @@ var apex_img_dir = "/i/",
 
     function InitializeAlere(){
         SavePreferences();
-        var urlToAlere = "https://www.aleresoftware.com/apex/f?p=" + window.localStorage.getItem("urlCode");
+
+        /*SE AGREGO EL NUEVO URL CON EL VALOR DE APP PARA ENTRAR DIRECTO A LA APLICACION*/
+        /*var urlToAlere = "https://www.aleresoftware.com/apex/f?p=" + window.localStorage.getItem("urlCode");*/
+        var urlToAlere = window.localStorage.getItem("urlCode") + "/apex/f?p=ALERE:1000:::P1000_APP,P1000_USER,P1000_PASS:";
+        urlToAlere = urlToAlere + window.localStorage.getItem("app");
+        urlToAlere = urlToAlere + "," + window.localStorage.getItem("usuario");
+        urlToAlere = urlToAlere + "," + CryptoJS.MD5(window.localStorage.getItem("contrasena"));
+
         var browserRef = window.open(urlToAlere, '_blank', 'location=no');
         browserRef.addEventListener('loadstart', function(event){
         });
@@ -224,6 +250,10 @@ var apex_img_dir = "/i/",
         if(window.localStorage.getItem("urlCode") != ""){
             $('#P101_URLCODE').val(window.localStorage.getItem("urlCode"));
             carga = true;
+        }
+        if(window.localStorage.getItem("app") != ""){
+            $('#P101_APP').val(window.localStorage.getItem("app"));
+            carga = true;
         }            
 
         if(carga){
@@ -243,6 +273,10 @@ var apex_img_dir = "/i/",
         }
         if(window.localStorage.getItem("urlCode") != $('#P101_URLCODE').val()){
             window.localStorage.setItem("urlCode", $('#P101_URLCODE').val());
+            cambio = true;
+        }
+        if(window.localStorage.getItem("app") != $('#P101_APP').val()){
+            window.localStorage.setItem("app", $('#P101_APP').val());
             cambio = true;
         }
         if(cambio){
