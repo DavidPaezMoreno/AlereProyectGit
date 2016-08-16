@@ -238,20 +238,20 @@ var apex_img_dir = "/i/",
 
     function LoadPreferences(){
         var carga = false;
-        
-        if(window.localStorage.getItem("usuario") != ""){
+        var nullVal
+        if(window.localStorage.getItem("usuario") != "" && window.localStorage.getItem("usuario") != null){
             $('#P101_USERNAME').val(window.localStorage.getItem("usuario"));
             carga = true;
         }
-        if(window.localStorage.getItem("contrasena") != ""){
+        if(window.localStorage.getItem("contrasena") != "" && window.localStorage.getItem("contrasena") != null){
             $('#P101_PASSWORD').val(window.localStorage.getItem("contrasena"));
             carga = true;
         }
-        if(window.localStorage.getItem("urlCode") != ""){
+        if(window.localStorage.getItem("urlCode") != "" && window.localStorage.getItem("urlCode") !=  null){
             $('#P101_URLCODE').val(window.localStorage.getItem("urlCode"));
             carga = true;
         }
-        if(window.localStorage.getItem("app") != ""){
+        if(window.localStorage.getItem("app") != "" && window.localStorage.getItem("app") != null){
             $('#P101_APP').val(window.localStorage.getItem("app"));
             carga = true;
         }            
