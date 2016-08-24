@@ -62,58 +62,30 @@
                                         <div class="t-Login-header">
                                             <center><img src="./ALERE Software _ CRM_files/alere1.png"> </center>
                                             <h1 class="t-Login-title" id="opptracker_heading">ALERE Software | CRM</h1>
-                                        </div>
-                                        <div class="t-Login-body">
-                                            
-                                            <!-- NUEVO CAMPO -->
-                                            <div class="t-Form-fieldContainer t-Form-fieldContainer--hiddenLabel rel-col" id="P101_URLCODE_CONTAINER">
-                                                <div class="t-Form-labelContainer t-Form-labelContainer--hiddenLabel col col-null">
-                                                    <label for="P101_URLCODE" id="P101_URLCODE_LABEL" class="t-Form-label u-VisuallyHidden">URL Code</label>
-                                                </div>
-                                                <div class="t-Form-inputContainer col col-null">
-                                                    <input type="hidden" name="p_arg_names" value="4654499136162425606">
-                                                    <input type="text" id="P101_URLCODE" name="p_t01" required="" aria-required="true" placeholder="URL" class="text_field width-100" value="" size="64" maxlength="100"><span class=""></span></div>
+                                        </div>                                        
+                                        <div>
+                                            <h1 class="t-Login-title" id="opptracker_heading">Conexiones</h1>
+                                            <div class="t-Login-buttons connection">
+                                                <button onclick="clickButton(1)" class="t-Button t-Button--hot  connection" type="button" id="B3150428814490370851" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="conexion1">Nueva conexión</span></button>
+                                            </div>
+                                            <div class="t-Login-buttons connection">
+                                                <button onclick="clickButton(2)" class="t-Button t-Button--hot  connection" type="button" id="B3150428814490370851" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="conexion2">Nueva conexión</span></button>
+                                            </div>
+                                            <div class="t-Login-buttons connection">
+                                                <button onclick="clickButton(3)" class="t-Button t-Button--hot  connection" type="button" id="B3150428814490370851" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="conexion3">Nueva conexión</span></button>
+                                            </div>
+                                            <div class="t-Login-buttons connection">
+                                                <button onclick="clickButton(4)" class="t-Button t-Button--hot  connection" type="button" id="B3150428814490370851" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="conexion4">Nueva conexión</span></button>
+                                            </div>
+                                            <div class="t-Login-buttons connection">
+                                                <button onclick="clickButton(5)" class="t-Button t-Button--hot  connection" type="button" id="B3150428814490370851" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="conexion5">Nueva conexión</span></button>
                                             </div>
 
-                                            <div class="t-Form-fieldContainer t-Form-fieldContainer--hiddenLabel rel-col" id="P101_APP_CONTAINER">
-                                                <div class="t-Form-labelContainer t-Form-labelContainer--hiddenLabel col col-null">
-                                                    <label for="P101_URLCODE" id="P101_APP_LABEL" class="t-Form-label u-VisuallyHidden">URL Code</label>
-                                                </div>
-                                                <div class="t-Form-inputContainer col col-null">
-                                                    <input type="hidden" name="p_arg_names" value="4654499136162425606">
-                                                    <input type="text" id="P101_APP" name="p_t01" required="" aria-required="true" placeholder="APP" class="text_field width-100" value="" size="64" maxlength="100"><span class=""></span></div>
+                                            <div class="t-Login-buttons" style="padding-left: 20%; padding-right: 20%;">
+                                                <button  class="t-Button t-Button--hot  " type="button" id="edit" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="edit">Activar Edición</span></button>
                                             </div>
 
-                                            <!-- FIN NUEVO CAMPO -->
-                                            <div class="t-Form-fieldContainer t-Form-fieldContainer--hiddenLabel rel-col" id="P101_USERNAME_CONTAINER">
-                                                <div class="t-Form-labelContainer t-Form-labelContainer--hiddenLabel col col-null">
-                                                    <label for="P101_USERNAME" id="P101_USERNAME_LABEL" class="t-Form-label u-VisuallyHidden">User Name</label>
-                                                </div>
-                                                <div class="t-Form-inputContainer col col-null">
-                                                    <input type="hidden" name="p_arg_names" value="4654499136162425606">
-                                                    <input type="text" id="P101_USERNAME" name="p_t01" required="" aria-required="true" placeholder="username" class="text_field" value="" size="64" maxlength="100"><span class=""></span></div>
-                                            </div>
-
-                                            <div class="t-Form-fieldContainer t-Form-fieldContainer--hiddenLabel rel-col" id="P101_PASSWORD_CONTAINER">
-                                                <div class="t-Form-labelContainer t-Form-labelContainer--hiddenLabel col col-null">
-                                                    <label for="P101_PASSWORD" id="P101_PASSWORD_LABEL" class="t-Form-label u-VisuallyHidden">Password</label>
-                                                </div>
-                                                <div class="t-Form-inputContainer col col-null">
-                                                    <input type="hidden" name="p_arg_names" value="4654499240910425607">
-                                                    <!--ONKEYPRESS para mandar a la página-->
-                                                    <!--VALOR ANTERIOR:  return apex.submit({request:&#39;P101_PASSWORD&#39;,submitIfEnter:event}) -->
-                                                    <input type="password" name="p_t02" size="64" maxlength="100" value="" id="P101_PASSWORD" required="" aria-required="true" placeholder="password" class="password" onkeypress=""><span class=""></span></div>
-                                            </div>
                                         </div>
-                                        <div class="t-Login-buttons">
-                                            <!--onclick para mandar a la página-->
-                                            <!--VALOR ANTERIOR: apex.submit(&#39;LOGIN&#39;); -->
-                                            <button onclick="InitializeAlere()" class="t-Button t-Button--hot  " type="button" id="B3150428814490370851" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label">Sign In</span></button>
-                                        </div>
-                                        <div class="t-Login-links">
-
-                                        </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -145,54 +117,92 @@ var apex_img_dir = "/i/",
         html {
             visibility: hidden;
         }
+        .t-Login-buttons{
+            margin-bottom: 5px;
+        }
+        .editable {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 0px 2px #2578cf inset;
+            color: #2578cf;
+        }
+        .editable:hover {
+            color: #ffffff;
+            background-color: #4992DE;
+        }
     </style>
     <script type="text/javascript">
         apex.security.framebreaker("D");
     </script>
 
     <script type="text/javascript">
-    apex.da.initDaEventList = function() {
-        apex.da.gEventList = [{
-            "triggeringConditionType": "JAVASCRIPT_EXPRESSION",
-            "triggeringExpression": function() {
-                return ($v("P101_USERNAME") === "")
-            },
-            "bindEventType": "ready",
-            actionList: [{
-                "eventResult": true,
-                "executeOnPageInit": false,
-                "stopExecutionOnError": true,
-                "affectedElementsType": "ITEM",
-                "affectedElements": "P101_USERNAME",
-                javascriptFunction: apex.da.setFocus,
-                "action": "NATIVE_SET_FOCUS"
-            }, {
-                "eventResult": true,
-                "executeOnPageInit": false,
-                "stopExecutionOnError": true,
-                "affectedElementsType": "ITEM",
-                "affectedElements": "P101_URLCODE",
-                javascriptFunction: apex.da.setFocus,
-                "action": "NATIVE_SET_FOCUS"
-            }, {
-                "eventResult": false,
-                "executeOnPageInit": false,
-                "stopExecutionOnError": true,
-                "affectedElementsType": "ITEM",
-                "affectedElements": "P101_PASSWORD",
-                javascriptFunction: apex.da.setFocus,
-                "action": "NATIVE_SET_FOCUS"
-            }, {
-                "eventResult": false,
-                "executeOnPageInit": false,
-                "stopExecutionOnError": true,
-                "affectedElementsType": "ITEM",
-                "affectedElements": "P101_APP",
-                javascriptFunction: apex.da.setFocus,
-                "action": "NATIVE_SET_FOCUS"
-            }]
-        }];
+
+    $(document).ready(function() {
+        LoadConection();
+    });
+
+    /*Accion de editar*/
+    var editMode = false;
+    $("#edit").click(function(event) {
+        if ($(".editable").length>0 ) {
+            $(".editable").removeClass('editable');
+            $("#edit").text("Activar Edición");
+            editMode = false;
+        }else{
+            $(".connection").addClass('editable');
+            $("#edit").text("Desactivar Edición");
+            editMode = true;
+        }
+    });
+
+    
+    function clickButton(idConexion){
+        if(editMode){
+            window.location.href = "editarConexion.html?id=" + idConexion;
+        }else{
+            if(window.localStorage.getItem("coname_"+idConexion) != "" && window.localStorage.getItem("coname_"+idConexion) != null){
+                InitializeAlere(idConexion);
+            }else{
+
+            }
+            
+        }
     }
+
+    function InitializeAlere(idConexion){
+        /*SE AGREGO EL NUEVO URL CON EL VALOR DE APP PARA ENTRAR DIRECTO A LA APLICACION*/
+        /*var urlToAlere = "https://www.aleresoftware.com/apex/f?p=" + window.localStorage.getItem("urlCode");*/
+        var urlToAlere = window.localStorage.getItem("urlCode_"+idConexion) + "/apex/f?p=ALERE:1000:::::P1000_APP,P1000_USER,P1000_PASS:";
+        urlToAlere = urlToAlere + window.localStorage.getItem("app_"+idConexion);
+        urlToAlere = urlToAlere + "," + window.localStorage.getItem("usuario_"+idConexion);
+        urlToAlere = urlToAlere + "," + CryptoJS.MD5(window.localStorage.getItem("contrasena_"+idConexion));
+
+        var browserRef = window.open(urlToAlere, '_blank', 'location=no');
+        browserRef.addEventListener('loadstart', function(event){
+        });
+        browserRef.addEventListener('loadstop', function(event){
+            var setUsername = "$('#P101_USERNAME').val('" + window.localStorage.getItem("usuario_"+idConexion) + "');";
+            var setPassword = "$('#P101_PASSWORD').val('" + window.localStorage.getItem("contrasena_"+idConexion) + "');";
+            browserRef.executeScript({code: setUsername});
+            browserRef.executeScript({code: setPassword});
+            browserRef.executeScript({code: "$('#B3150428814490370851').focus();"})
+        });
+        browserRef.addEventListener('exit', function(event){
+        });
+    }
+
+    function LoadConection(){
+
+        for (var i = 1; i < 6; i++) {
+            if(window.localStorage.getItem("coname_"+i) != "" && window.localStorage.getItem("coname_"+i) != null){
+                $('#conexion'+i).text(window.localStorage.getItem("coname_"+i));
+                
+            }else{
+                $('#conexion'+i).text("------------------");
+            }
+        }
+        
+    }
+
     </script>
 
     <script type="text/javascript" src="./ALERE Software _ CRM_files/widget.regionDisplaySelector.min.js"></script>
@@ -203,134 +213,3 @@ var apex_img_dir = "/i/",
     <script type="text/javascript" src="./ALERE Software _ CRM_files/modernizr-custom.min.js"></script>
     <script type="text/javascript" src="./ALERE Software _ CRM_files/com.oracle.apex.carousel.min.js"></script>
     <script type="text/javascript" src="./ALERE Software _ CRM_files/theme42.min.js"></script>
-
-    <!-- SCRIPTS PARA DAR INICIO AL INAPPBROWSER Y GUARDAR LOS CAMPOS-->
-    <script type="text/javascript">
-    
-    $(document).ready(function() {
-        LoadPreferences();
-        $('#P101_USERNAME').focus();
-    });
-
-    function InitializeAlere(){
-        SavePreferences();
-
-        /*SE AGREGO EL NUEVO URL CON EL VALOR DE APP PARA ENTRAR DIRECTO A LA APLICACION*/
-        /*var urlToAlere = "https://www.aleresoftware.com/apex/f?p=" + window.localStorage.getItem("urlCode");*/
-        var urlToAlere = window.localStorage.getItem("urlCode") + "/apex/f?p=ALERE:1000:::P1000_APP,P1000_USER,P1000_PASS:";
-        urlToAlere = urlToAlere + window.localStorage.getItem("app");
-        urlToAlere = urlToAlere + "," + window.localStorage.getItem("usuario");
-        urlToAlere = urlToAlere + "," + CryptoJS.MD5(window.localStorage.getItem("contrasena"));
-
-        var browserRef = window.open(urlToAlere, '_blank', 'location=no');
-        browserRef.addEventListener('loadstart', function(event){
-        });
-        browserRef.addEventListener('loadstop', function(event){
-            var setUsername = "$('#P101_USERNAME').val('" + window.localStorage.getItem("usuario") + "');";
-            var setPassword = "$('#P101_PASSWORD').val('" + window.localStorage.getItem("contrasena") + "');";
-            browserRef.executeScript({code: setUsername});
-            browserRef.executeScript({code: setPassword});
-            browserRef.executeScript({code: "$('#B3150428814490370851').focus();"})
-        });
-        browserRef.addEventListener('exit', function(event){
-        });
-    }
-
-    function LoadPreferences(){
-        var carga = false;
-        var nullVal
-        if(window.localStorage.getItem("usuario") != "" && window.localStorage.getItem("usuario") != null){
-            $('#P101_USERNAME').val(window.localStorage.getItem("usuario"));
-            carga = true;
-        }
-        if(window.localStorage.getItem("contrasena") != "" && window.localStorage.getItem("contrasena") != null){
-            $('#P101_PASSWORD').val(window.localStorage.getItem("contrasena"));
-            carga = true;
-        }
-        if(window.localStorage.getItem("urlCode") != "" && window.localStorage.getItem("urlCode") !=  null){
-            $('#P101_URLCODE').val(window.localStorage.getItem("urlCode"));
-            carga = true;
-        }
-        if(window.localStorage.getItem("app") != "" && window.localStorage.getItem("app") != null){
-            $('#P101_APP').val(window.localStorage.getItem("app"));
-            carga = true;
-        }            
-
-        if(carga){
-            alert("Hemos cargado tus datos usados con anterioridad para acceder.");
-        }
-    }
-
-    function SavePreferences(){
-        var cambio = false;
-        if(window.localStorage.getItem("usuario") != $('#P101_USERNAME').val()){
-            window.localStorage.setItem("usuario", $('#P101_USERNAME').val());
-            cambio = true;
-        }
-        if(window.localStorage.getItem("contrasena") != $('#P101_PASSWORD').val()){
-            window.localStorage.setItem("contrasena", $('#P101_PASSWORD').val());
-            cambio = true;
-        }
-        if(window.localStorage.getItem("urlCode") != $('#P101_URLCODE').val()){
-            window.localStorage.setItem("urlCode", $('#P101_URLCODE').val());
-            cambio = true;
-        }
-        if(window.localStorage.getItem("app") != $('#P101_APP').val()){
-            window.localStorage.setItem("app", $('#P101_APP').val());
-            cambio = true;
-        }
-        if(cambio){
-            alert("Se han guardado sus nuevos datos de nombre de usuario y contraseña.");
-        }            
-    }  
-
-    </script>
-
-
-    <script type="text/javascript">
-apex.jQuery(document).ready(function() {
-    (function() {
-        var lTimeoutField = document.getElementById("apex_login_throttle_sec"),
-            lTimeout = lTimeoutField ? +lTimeoutField.innerHTML : 0;
-        if (lTimeout) {
-            var lTimer = window.setInterval(
-                function() {
-                    if (lTimeout > 0) {
-                        lTimeoutField.innerHTML = lTimeout;
-                        lTimeout--;
-                    } else {
-                        window.clearInterval(lTimer);
-                        var lDiv = document.getElementById("apex_login_throttle_div");
-                        if (lDiv) {
-                            lDiv.parentNode.removeChild(lDiv);
-                            return true;
-                        }
-                    }
-                },
-                1000);
-        }
-    })();
-    (function() {
-        apex.da.initDaEventList();
-    })();
-    (function() {
-        apex.da.init();
-    })();
-
-    /*(function () {
-        var elem = document.getElementsByClassName('a-Icon');
-        elem.parentNode.removeChild(elem);
-        return false;
-    });*/
-
-
-
-    apex.theme42.initializePage.appLogin();
-
-});
-    </script>
-
-
-</body>
-
-</html>
