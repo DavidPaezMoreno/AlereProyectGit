@@ -62,27 +62,18 @@
                                         <div class="t-Login-header">
                                             <center><img src="./ALERE Software _ CRM_files/alere1.png"> </center>
                                             <h1 class="t-Login-title" id="opptracker_heading">ALERE Software</h1>
-                                        </div>                                        
-                                        <div>
-                                            <h1 class="t-Login-title" id="opptracker_heading">Conexiones</h1>
-                                            <div class="t-Login-buttons connection">
-                                                <button onclick="clickButton(1)" class="t-Button t-Button--hot  connection" type="button" id="B3150428814490370851" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="conexion1">Nueva conexión</span></button>
+                                        </div>
+                                                                              
+                                        <div><h1 class="t-Login-title" id="opptracker_heading">Conexiones</h1>
+                                            <div id="button_area">
+                                            
+                                            
                                             </div>
-                                            <div class="t-Login-buttons connection">
-                                                <button onclick="clickButton(2)" class="t-Button t-Button--hot  connection" type="button" id="B3150428814490370851" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="conexion2">Nueva conexión</span></button>
-                                            </div>
-                                            <div class="t-Login-buttons connection">
-                                                <button onclick="clickButton(3)" class="t-Button t-Button--hot  connection" type="button" id="B3150428814490370851" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="conexion3">Nueva conexión</span></button>
-                                            </div>
-                                            <div class="t-Login-buttons connection">
-                                                <button onclick="clickButton(4)" class="t-Button t-Button--hot  connection" type="button" id="B3150428814490370851" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="conexion4">Nueva conexión</span></button>
-                                            </div>
-                                            <div class="t-Login-buttons connection">
-                                                <button onclick="clickButton(5)" class="t-Button t-Button--hot  connection" type="button" id="B3150428814490370851" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="conexion5">Nueva conexión</span></button>
-                                            </div>
-
                                             <div class="t-Login-buttons" style="padding-left: 20%; padding-right: 20%;">
-                                                <button  class="t-Button t-Button--hot  " type="button" id="edit" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="edit">Activar Edición</span></button>
+                                                <button  class="t-Button t-Button--hot  " type="button" id="edit" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="edit">Configurar</span></button>
+                                            </div>
+                                            <div class="t-Login-buttons" style="padding-left: 20%; padding-right: 20%;">
+                                                <button  class="t-Button t-Button--hot  " type="button" id="add" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="add">Agregar</span></button>
                                             </div>
 
                                         </div>
@@ -136,6 +127,8 @@ var apex_img_dir = "/i/",
 
     <script type="text/javascript">
 
+    var lastIndex;
+
     $(document).ready(function() {
         LoadConection();
     });
@@ -145,13 +138,15 @@ var apex_img_dir = "/i/",
     $("#edit").click(function(event) {
         if ($(".editable").length>0 ) {
             $(".editable").removeClass('editable');
-            $("#edit").text("Activar Edición");
             editMode = false;
         }else{
             $(".connection").addClass('editable');
-            $("#edit").text("Desactivar Edición");
             editMode = true;
         }
+    });
+
+    $("#add").click(function(event) {
+        window.location.href = "editarConexion.html?id=" + (lastIndex + 1) ;
     });
 
     
@@ -176,7 +171,7 @@ var apex_img_dir = "/i/",
         urlToAlere = urlToAlere + "," + window.localStorage.getItem("usuario_"+idConexion);
         urlToAlere = urlToAlere + "," + CryptoJS.MD5(window.localStorage.getItem("contrasena_"+idConexion));
 
-        var browserRef = window.open(urlToAlere, '_blank', 'location=yes');
+        var browserRef = window.open(urlToAlere, '_system', 'location=no');
         browserRef.addEventListener('loadstart', function(event){
         });
         browserRef.addEventListener('loadstop', function(event){
@@ -192,9 +187,15 @@ var apex_img_dir = "/i/",
 
     function LoadConection(){
 
-        for (var i = 1; i < 6; i++) {
+        for (var i = 1; window.localStorage.getItem("coname_"+i) != "" && window.localStorage.getItem("coname_"+i) != null; i++) {
             if(window.localStorage.getItem("coname_"+i) != "" && window.localStorage.getItem("coname_"+i) != null){
                 $('#conexion'+i).text(window.localStorage.getItem("coname_"+i));
+
+                var buttonText ='<div class="t-Login-buttons connection">' +
+                    '<button onclick="clickButton('+i+')" class="t-Button t-Button--hot  connection" type="button" id="B3150428814490370851" style="touch-action: pan-y; -webkit-user-  select:   none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="t-Button-label" id="conexion'+i+'">'+window.localStorage.getItem("coname_"+i) +'</span></button>' +
+                '</div>';
+                $("#button_area").append(buttonText);
+                lastIndex = i;
                 
             }else{
                 $('#conexion'+i).text("------------------");
