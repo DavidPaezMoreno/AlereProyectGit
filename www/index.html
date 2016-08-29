@@ -171,7 +171,7 @@ var apex_img_dir = "/i/",
         urlToAlere = urlToAlere + "," + window.localStorage.getItem("usuario_"+idConexion);
         urlToAlere = urlToAlere + "," + CryptoJS.MD5(window.localStorage.getItem("contrasena_"+idConexion));
 
-        var browserRef = window.open(urlToAlere, '_system', 'location=no');
+        var browserRef = window.open(urlToAlere, '_blank', 'location=no');
         browserRef.addEventListener('loadstart', function(event){
         });
         browserRef.addEventListener('loadstop', function(event){
