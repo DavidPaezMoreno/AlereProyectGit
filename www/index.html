@@ -89,7 +89,6 @@
         <input type="hidden" name="p_page_checksum" value="7AK8LVHdFqXxu0cDSElYC0c4ppo" id="pPageChecksum">
     </form>
 
-
     <script type="text/javascript">
 var apex_img_dir = "/i/",
     htmldb_Img_Dir = apex_img_dir;
@@ -119,6 +118,15 @@ var apex_img_dir = "/i/",
         .editable:hover {
             color: #ffffff;
             background-color: #4992DE;
+        }
+        .overlay{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: rgba(51,51,51,0.7);
+            z-index: 100000;
         }
     </style>
     <script type="text/javascript">
@@ -171,7 +179,8 @@ var apex_img_dir = "/i/",
         urlToAlere = urlToAlere + "," + window.localStorage.getItem("usuario_"+idConexion);
         urlToAlere = urlToAlere + "," + CryptoJS.MD5(window.localStorage.getItem("contrasena_"+idConexion));
 
-        var browserRef = window.open(urlToAlere, '_blank', 'location=no');
+        var browserFrame = $('body').append('<iframe src="'+urlToAlere+'" class="overlay" height="100%" width="100%" frameborder="0"></iframe>');
+        /*var browserRef = window.open(urlToAlere, '_system', 'location=no, toolbar=no');
         browserRef.addEventListener('loadstart', function(event){
         });
         browserRef.addEventListener('loadstop', function(event){
@@ -182,7 +191,7 @@ var apex_img_dir = "/i/",
             browserRef.executeScript({code: "$('#B3150428814490370851').focus();"})
         });
         browserRef.addEventListener('exit', function(event){
-        });
+        });*/
     }
 
     function LoadConection(){
