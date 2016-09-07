@@ -179,9 +179,8 @@ var apex_img_dir = "/i/",
         urlToAlere = urlToAlere + "," + window.localStorage.getItem("usuario_"+idConexion);
         urlToAlere = urlToAlere + "," + CryptoJS.MD5(window.localStorage.getItem("contrasena_"+idConexion));
 
-        var browserFrame = $('body').append('<iframe src="'+urlToAlere+'" class="overlay" height="100%" width="100%" frameborder="0"></iframe>');
-        /*var browserRef = window.open(urlToAlere, '_system', 'location=no, toolbar=no');
-        browserRef.addEventListener('loadstart', function(event){
+        //var browserFrame = $('body').append('<iframe src="'+urlToAlere+'" class="overlay" height="100%" width="100%" frameborder="0"></iframe>');
+        /*browserRef.addEventListener('loadstart', function(event){
         });
         browserRef.addEventListener('loadstop', function(event){
             var setUsername = "$('#P101_USERNAME').val('" + window.localStorage.getItem("usuario_"+idConexion) + "');";
